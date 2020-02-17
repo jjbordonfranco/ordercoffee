@@ -1,74 +1,42 @@
 import 'package:flutter/material.dart';
 
+import 'package:ordercoffee/src/widgets/fondo_pantalla.dart';
+import 'package:ordercoffee/src/widgets/top_app_bar.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-              child: Stack(
-          children: <Widget> [
-            FondoPantalla(),
-          ] 
-        ),
-      ),
+       body: SafeArea(
+          child: Stack(
+            children: <Widget> [
+              FondoPantalla(),
+              SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    TopAppBar(),
+                    _Header(),
+                  ],
+                  )
+                ),
+
+            ] 
+          ),
+       ),
     );
   }
 }
 
-class FondoPantalla extends StatelessWidget {
-  const FondoPantalla({Key key}) : super(key: key);
-
+class _Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    
-    return Stack(
-          children: <Widget>[
-            fondoGrisPrincipal(),
-            fondoBlanco(size),
-            fondoGris(size),
-          ],
+    return Container(
+      padding: EdgeInsets.all(15.00),
+      child:Text('Order Coffee', style: TextStyle(fontWeight:FontWeight.bold, fontSize:20))
     );
   }
-}
-
-fondoGris(Size size) {
-  return Positioned(
-    left: 16,
-    top: 10,
-    child: Container(
-    width: size.width * 0.9,
-    height: size.height * 0.8,
-    decoration: BoxDecoration(
-      color: Color.fromRGBO(245, 245, 245, 1.00),
-      borderRadius: BorderRadius.circular(30),
-    ),
-
-    ),
-  );
-}
-
-fondoBlanco(Size size) {
-  return Positioned(
-    left: 5,
-    top:5,
-    child: Container(
-    width: size.width * 0.97,
-    height: size.height * 0.935,
-    decoration: BoxDecoration(
-      color: Color.fromRGBO(255, 255, 255, 1.00),
-      borderRadius: BorderRadius.circular(30)
-    ),
-
-    ),
-  );
-}
-
-fondoGrisPrincipal() {
-  return Container(
-    color: Color.fromRGBO(140, 138, 138, 1.00)
-  );
 }
 
