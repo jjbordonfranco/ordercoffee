@@ -13,16 +13,17 @@ class HomePage extends StatelessWidget {
           child: Stack(
             children: <Widget> [
               FondoPantalla(),
-              SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    TopAppBar(),
-                    _Header(),
-                    BotonesDesplazables(),
-                  ],
-                  )
+              Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                TopAppBar(),
+                _Header(),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: BotonesDesplazables(),
                 ),
+              ],
+              )
             ] 
           ),
        ),
@@ -40,10 +41,26 @@ class _Header extends StatelessWidget {
   }
 }
 
+// List<Widget> _botonesDesplazables(){
+//     List<Widget> botones = [];
+
+//     for (var i = 0; i < 10; i++) {
+//       botones.add(
+//         Column(
+//           children: <Widget>[
+//            _dibujaBoton('All'),
+//           ],
+//         ),
+ 
+//       );
+//     }
+//     return botones;
+// }
+
 class BotonesDesplazables extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-   
+  
     return Row(
       children: <Widget>[
         SizedBox(width: 15.0),
@@ -73,6 +90,5 @@ class BotonesDesplazables extends StatelessWidget{
 
 
   }
-
 }
 
