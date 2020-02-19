@@ -9,8 +9,8 @@ class FondoPantalla extends StatelessWidget {
     
     return Stack(
           children: <Widget>[
-            fondoGrisPrincipal(),
-            fondoBlanco(size),
+            fondoPrincipal(),
+            // fondoBlanco(size),
             fondoGris(size),
           ],
     );
@@ -49,9 +49,10 @@ fondoBlanco(Size size) {
   );
 }
 
-fondoGrisPrincipal() {
+fondoPrincipal() {
   return Container(
-    color: Color.fromRGBO(140, 138, 138, 1.00)
+    // color: Color.fromRGBO(140, 138, 138, 1.00) //fondo gris
+    color: Color.fromRGBO(255, 255, 255, 1.00), //fondo blanco
   );
 }
 

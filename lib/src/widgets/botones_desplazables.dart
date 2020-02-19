@@ -9,7 +9,11 @@ class BotonesDesplazables extends StatefulWidget{
 
 class _BotonesDesplazablesState extends State<BotonesDesplazables> {
   List<bool> presionado = [true,false,false,false];
-
+  @override
+  void initState() { 
+    super.initState();
+    
+  }
   @override
   Widget build(BuildContext context) {
   
