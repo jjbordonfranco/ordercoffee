@@ -11,10 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'OrderCoffee App',
-      initialRoute: 'home',
-      routes: {
-        'home': (BuildContext context) => HomePage(),
-      },
+        home: HomePage(),
 
     );
   }
