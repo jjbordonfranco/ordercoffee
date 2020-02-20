@@ -41,12 +41,17 @@ class ListaArticulos extends StatelessWidget {
       color: Colors.white,
       child: Row(
         children: <Widget>[
-          SizedBox(width: 10.0),
+          SizedBox(width: 20.0),
           imagenRedondeada('assets/capuccino.jpeg'),
           SizedBox(width:10.0),
           producto('Expresso'),
-          SizedBox(width:10.0),
+          Expanded(
+            flex:1, 
+            child: 
+              Container(color: Colors.white,)
+          ),
           cantidadProducto(),
+          SizedBox(width:20.0),
         ],
       ),
     );
@@ -56,30 +61,46 @@ class ListaArticulos extends StatelessWidget {
   Widget cantidadProducto(){
     return Row(
       children: <Widget>[
-        dibujaBoton('-'),
-        dibujaBoton('-'),
-        dibujaBoton('-'),
+        SizedBox( //dibuja botón "-"
+          width: 20.0,
+          height: 25.0,
+          child: FlatButton(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(5.0),
+                bottomLeft: Radius.circular(5.0),
+              ),
+            ),
+            color: Colors.grey[300],
+            onPressed: (){}, 
+            child:  Text("-",textAlign: TextAlign.right,style: TextStyle(color: Colors.grey),)  //Center alinea texto en vertical
+          ),
+        ),
+        Container(
+          width: 25.0,
+          height: 25.0,
+          color: Colors.grey[300],
+          child: Center(child: Text("0", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey),)),
+        ),
+        SizedBox( //dibuja botón "+"
+          width: 20.0,
+          height: 25.0,
+          child: FlatButton(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(5.0),
+                bottomRight: Radius.circular(5.0),
+              ),
+            ),
+            color: Colors.grey[300],
+            onPressed: (){}, 
+            child:  Text("+",textAlign: TextAlign.right,style: TextStyle(color: Colors.grey),),  //Center alinea texto en vertical
+          ),
+        ),
       ],
     );
   }
 
-  Widget dibujaBoton(String texto){
-    return SizedBox(
-      width: 25.0,
-      height: 25.0,
-      child: FlatButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(5.0),
-            bottomLeft: Radius.circular(5.0),
-          ),
-        ),
-        color: Colors.grey[300],
-        onPressed: (){}, 
-        child:  Text(texto,textAlign: TextAlign.right,),  //Center alinea texto en vertical
-      ),
-    );
-  }
 
   Widget imagenRedondeada(String enlace){
     return CircleAvatar(
