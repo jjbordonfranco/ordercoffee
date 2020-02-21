@@ -51,3 +51,4 @@ class BarraNavegacion extends StatelessWidget {
       );
   }
 }
+
