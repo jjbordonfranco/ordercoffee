@@ -9,9 +9,9 @@ class FondoPantalla extends StatelessWidget {
     
     return Stack(
           children: <Widget>[
-            fondoPrincipal(),
+            fondoPrincipal(), //muestra un fondo de color blanco en todo el fondo
             // fondoBlanco(size),
-            fondoGris(size),
+            fondoGris(size), //muestra un fondo gris dimensionado un % de la dimension del dispositivo sobre el fondo principal
           ],
     );
   }
@@ -21,12 +21,12 @@ fondoGris(Size size) {
   return Positioned(
     left: 16,
     top: 10,
-    child: Container(
-    width: size.width * 0.9,
-    height: size.height * 0.8,
+    child: Container( //
+    width: size.width * 0.9, //% del ancho del dispositivo
+    height: size.height * 0.8, //% del alto del dispositivo
     decoration: BoxDecoration(
       color: Color.fromRGBO(245, 245, 245, 1.00),
-      borderRadius: BorderRadius.circular(30),
+      borderRadius: BorderRadius.circular(30), //container con bordes redondeados
     ),
 
     ),
@@ -34,6 +34,8 @@ fondoGris(Size size) {
 }
 
 fondoBlanco(Size size) {
+  //este fondo se utilizaba entre el fondo principal que era gris oscuro en principio, y el fondo gris
+  //no lo utilizamos
   return Positioned(
     left: 5,
     top:5,

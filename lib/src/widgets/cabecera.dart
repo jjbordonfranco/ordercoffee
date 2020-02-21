@@ -6,9 +6,16 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(15.00),
-      child:Text('Order Coffee', style: TextStyle(fontWeight:FontWeight.bold, fontSize:20))
+    return Row(
+      children: <Widget>[
+        SizedBox(width: 30.0),
+        Text('Order Coffee', style: TextStyle(fontWeight:FontWeight.bold, fontSize:20)),
+      ],
     );
+    // return Container(
+    //   //Muestra un texto en cabecera con un espacio de separación por todos sus lados
+    //   padding: EdgeInsets.all(5.00),
+    //   child:Text('Order Coffee', style: TextStyle(fontWeight:FontWeight.bold, fontSize:20))
+    // );
   }
 }

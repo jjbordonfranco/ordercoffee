@@ -9,7 +9,7 @@ class ListaArticulos extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        children: <Widget>[
+        children: <Widget>[ //se asigna tipo artículo e imagen (debe llamarse igual en assets) a cada item de la lista
           listaArticulo('Expresso'),
           listaArticulo('Americano'),
           listaArticulo('Mocchiato'),
@@ -31,23 +31,23 @@ class ListaArticulos extends StatelessWidget {
 }
 
 Widget listaArticulo(String articulo) {
-  return Padding(
-    padding: const EdgeInsets.all(8.0),
+  return Padding( 
+    padding: const EdgeInsets.all(8.0), //separa un item de la lista (datos articulo) de otro
     child: Container(
       height: 45.0,
-      color: Colors.white,
+      color: Colors.white, //el color de fondo del item articulo
       child: Row(
         children: <Widget>[
           SizedBox(width: 20.0),
-          imagenRedondeada('assets/$articulo.jpeg'),
+          imagenRedondeada('assets/$articulo.jpeg'), //muestra la imagen del artículo - icono articulo
           SizedBox(width:10.0),
-          producto(articulo),
-          Expanded(
+          producto(articulo), //muestra nombre del producto e iconos categorias: S/M/L
+          Expanded( // crea una zona vacía entre los elementos anteriores y los siguientes. Se utiliza para mostrar seleccion de cantidad al final del row
             flex:1, 
             child: 
               Container(color: Colors.white,)
           ),
-          cantidadProducto(),
+          cantidadProducto(), // botones -/+ y cantidad a solicitar
           SizedBox(width:20.0),
         ],
       ),
@@ -74,7 +74,7 @@ Widget listaArticulo(String articulo) {
             child:  Text("-",textAlign: TextAlign.right,style: TextStyle(color: Colors.grey),)  //Center alinea texto en vertical
           ),
         ),
-        Container(
+        Container(  //muestra la cantidad
           width: 25.0,
           height: 25.0,
           color: Colors.grey[300],
@@ -101,6 +101,7 @@ Widget listaArticulo(String articulo) {
 
 
   Widget imagenRedondeada(String enlace){
+    //muestra la imagen redondeada
     return CircleAvatar(
           radius: 15.0,
           backgroundImage:   AssetImage(enlace),
@@ -108,6 +109,7 @@ Widget listaArticulo(String articulo) {
   }
 
   Widget producto(String descripcion){
+  //muestra nombre del producto (descripcion) e iconos categorias: S/M/L
     return Column(
       children: <Widget>[
         Text(descripcion),
@@ -115,7 +117,7 @@ Widget listaArticulo(String articulo) {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start ,
           children: <Widget>[
-            icono('S', true),
+            icono('S', true), //muestra un icono redondeado con un texto centrado en horizontal y vertical
             icono('M', false),
             icono('L', false),
           ],
@@ -125,6 +127,7 @@ Widget listaArticulo(String articulo) {
   }
 
   Widget icono(String texto, bool seleccionado){
+    //muestra un icono redondeado con un texto centrado en horizontal y vertical
     return Container(
       width: 20.0,
       decoration: BoxDecoration(

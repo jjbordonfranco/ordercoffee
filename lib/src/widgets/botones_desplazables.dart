@@ -8,7 +8,7 @@ class BotonesDesplazables extends StatefulWidget{
 }
 
 class _BotonesDesplazablesState extends State<BotonesDesplazables> {
-  List<bool> presionado = [true,false,false,false];
+  List<bool> presionado = [true,false,false,false,false,false,false,false];
   @override
   void initState() { 
     super.initState();
@@ -19,7 +19,7 @@ class _BotonesDesplazablesState extends State<BotonesDesplazables> {
   
     return Row(
       children: <Widget>[
-        SizedBox(width: 15.0), //separador horizontal para los botones
+        SizedBox(width: 30.0), //separador horizontal para los botones
         _dibujaBoton('All',0),
         SizedBox(width: 5.0),
         _dibujaBoton('Coffee',1),
@@ -27,6 +27,14 @@ class _BotonesDesplazablesState extends State<BotonesDesplazables> {
         _dibujaBoton('Tea',2),
         SizedBox(width: 5.0),
         _dibujaBoton('Juice',3),
+        SizedBox(width: 15.0), //separador horizontal para los botones
+        _dibujaBoton('All2',4),
+        SizedBox(width: 5.0),
+        _dibujaBoton('Coffee2',5),
+        SizedBox(width: 5.0),
+        _dibujaBoton('Tea2',6),
+        SizedBox(width: 5.0),
+        _dibujaBoton('Juice2',7),
       ],
     );
   }
@@ -46,7 +54,7 @@ class _BotonesDesplazablesState extends State<BotonesDesplazables> {
       // color: Colors.white,
       onPressed: (){  // cambia estado del botón que se presiona a true y a false del resto
         setState(() {
-          for (var i=0; i<4; i++) {
+          for (var i=0; i<8; i++) {
             if (i==pos)  
               presionado[pos] = true;
             else

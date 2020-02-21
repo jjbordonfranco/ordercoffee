@@ -8,11 +8,13 @@ class TopAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      //Muestra icono "<" 
       child: Container(
         width: double.infinity,
         color: Colors.transparent,
         child: Row(
           children: <Widget>[
+            SizedBox(width:10.0),
             IconButton(icon: Icon(FontAwesomeIcons.angleLeft), onPressed: null)
           ],),
       )
