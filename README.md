@@ -2,15 +2,7 @@
 
 A new Flutter project.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+En este proyecto se crea una plantilla con botones de comando en lista desplazable horizontal que se utilizarán 
+para filtrar las categorías de artículos.
+Los artículos se muestran en una lista desplazable vertical e incluyen imagen, descripcion, tamaño y botones de comando
+para solicitar la cantidad
